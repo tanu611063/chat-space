@@ -45,8 +45,9 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
 - belongs_to :user
+- has_many  :groups_users
+- has_many :groups, throgh: :groups_users
 
 ## groupsテーブル
 
