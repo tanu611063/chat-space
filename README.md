@@ -47,6 +47,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :groups, throgh: :groups_users
+- belongs_to :group
 
 ## groupsテーブル
 
