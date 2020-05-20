@@ -32,8 +32,8 @@ Things you may want to cover:
 |nickname|string|null: false|
 
 ### Association
-- has_many :groups
-- has_many :commnts
+- has_many :messages
+- has_many :groups, throgh: :groups_users
 
 ## messagesテーブル
 
@@ -53,11 +53,12 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
+|name|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :messages
-- belongs_to :user
+- belongs_to :user, throgh: :groups_users
 
 ## groups_usersテーブル
 
