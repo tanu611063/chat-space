@@ -23,7 +23,6 @@
       display: flex;
       justify-content: space-between;
       font-weight: bold;
-      &__name{}
       &__menu{
         width: 60px;
         display: flex;
@@ -33,8 +32,6 @@
         list-style: none;
         &__edit{
           margin-right: 5px;
-        }
-        &__set{
         }
         a{
           color:#ffffff;
