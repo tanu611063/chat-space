@@ -1,0 +1,45 @@
+.main__chat
+  .main__chat__header
+    .main__chat__header__block
+      .main__chat__header__block__groupname
+        test
+      .main__chat__header__block__member
+        member name
+    .main__chat__header__edit
+      = link_to "edit",url:"#", class: "main__chat__header__edit__btn " 
+  .main__chat__messages
+    .main__chat__messages__message
+      .main__chat__messages__message__info
+        .main__chat__messages__message__info__name
+          masa
+        .main__chat__messages__message__info__date
+          2020/5/22
+      .main__chat__messages__message__text
+        おはよう
+    .main__chat__messages__message
+      .main__chat__messages__message__info
+        .main__chat__messages__message__info__name
+          masa
+        .main__chat__messages__message__info__date
+          2020/5/22
+      .main__chat__messages__message__text
+        おはよう
+    .main__chat__messages__message
+      .main__chat__messages__message__info
+        .main__chat__messages__message__info__name
+          masa
+        .main__chat__messages__message__info__date
+          2020/5/22
+      .main__chat__messages__message__text
+        おはよう
+  .main__chat__form
+    .main__chat__form__message
+      %form.main__chat__form__message__box
+        .main__chat__form__message__box__text
+          %input.message{:type : "text"}
+          %label.photo
+            = icon('fa', 'image')
+            %input.push{:type : "file"}
+        %button{type: "submit", class:'btn'} 
+          send
+
