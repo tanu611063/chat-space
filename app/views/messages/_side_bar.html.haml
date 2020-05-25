@@ -2,28 +2,19 @@
   .side__bar__header
     .side__bar__header__box
       %p.side__bar__header__box__name
-        masa
+        = current_user.name
       %ul.side__bar__header__box__menu
         %li.side__bar__header__box__menu__edit
-          = link_to "#", class: "side__bar__header__box__menu__edit__btn " do
-            = icon('fas', 'edit')
+          = link_to new_group_path do
+            = icon('fas', 'pen-square', class: 'icon')
         %li.side__bar__header__box__menu__set
-          = link_to "#", class: "side__bar__header__box__menu__set__btn " do
-            = icon('fab', 'facebook-square')
+          = link_to edit_user_path(current_user.id) do
+            = icon('fas', 'cog', class: 'icon')
   .side__bar__groups
-    .side__bar__groups__group
-      %p.side__bar__groups__group__name
-      techcamp
-      %p.side__bar__groups__group__message
-      まだメッセージがありません
-    .side__bar__groups__group
-      %p.side__bar__groups__group__name
-      techcamp
-      %p.side__bar__groups__group__message
-      まだメッセージがありません
+    - current_user.groups.each do |group|
       .side__bar__groups__group
-      %p.side__bar__groups__group__name
-      techcamp
-      %p.side__bar__groups__group__message
-      まだメッセージがありません
-
+        = link_to '＃' do
+          %p.side__bar__groups__group__name
+            = group.name
+          %p.side__bar__groups__group__message
+            まだメッセージがありません
