@@ -2,44 +2,29 @@
   .main__chat__header
     .main__chat__header__block
       .main__chat__header__block__groupname
-        test
+        = @group.name
       .main__chat__header__block__member
-        member name
+        - @group.users.each do |user| 
+          = user.name
     .main__chat__header__edit
-      = link_to "edit",url:"#", class: "main__chat__header__edit__btn " 
+      = link_to "edit", edit_group_path(@group), class: "main__chat__header__edit__btn " 
+      /= link_to "edit", '/edit', class: "main__chat__header__edit__btn"
   .main__chat__messages
     .main__chat__messages__message
       .main__chat__messages__message__info
         .main__chat__messages__message__info__name
-          masa
+          = @group.name
         .main__chat__messages__message__info__date
-          2020/5/22
+          = @group
       .main__chat__messages__message__text
-        おはよう
-    .main__chat__messages__message
-      .main__chat__messages__message__info
-        .main__chat__messages__message__info__name
-          masa
-        .main__chat__messages__message__info__date
-          2020/5/22
-      .main__chat__messages__message__text
-        おはよう
-    .main__chat__messages__message
-      .main__chat__messages__message__info
-        .main__chat__messages__message__info__name
-          masa
-        .main__chat__messages__message__info__date
-          2020/5/22
-      .main__chat__messages__message__text
-        おはよう
+        = render @messages
+
   .main__chat__form
     .main__chat__form__message
-      %form.main__chat__form__message__box
-        .main__chat__form__message__box__text
-          %input.message{type: "text"}
-          %label.photo
-            = icon('fa', 'image')
-            %input.push{type: "file"}
-        %button{type: "submit", class:'btn'} 
-          send
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fa', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
 
