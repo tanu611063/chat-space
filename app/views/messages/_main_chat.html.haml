@@ -10,11 +10,6 @@
       = link_to "edit", edit_group_path(@group), class: "main__chat__header__edit__btn " 
   .main__chat__messages
     .main__chat__messages__message
-      .main__chat__messages__message__info
-        .main__chat__messages__message__info__name
-          = @group.name
-        .main__chat__messages__message__info__date
-          
       .main__chat__messages__message__text
         = render @messages
 
