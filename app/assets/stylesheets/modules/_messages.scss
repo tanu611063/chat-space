@@ -31,7 +31,11 @@
         color: #ffffff;
         list-style: none;
         &__edit{
-          margin-right: 5px;
+          margin-right: 0.5rem;
+          font-size: medium;
+        }
+        &__set{
+          font-size: medium;
         }
         a{
           color:#ffffff;
@@ -39,10 +43,14 @@
         }
       }
     }
-  &__groups{
-    background-color: #2f3e51;
-    height: calc(100vh - 100px);
-    padding: 20px 20px 0;
+    &__groups{
+      a{
+        color: white;
+        text-decoration: none;
+      }
+      background-color: #2f3e51;
+      height: calc(100vh - 100px);
+      padding: 20px 20px 0;
     &__group{
       margin-bottom: 40px;
       &__name{
@@ -62,6 +70,10 @@
   width: calc(100vw - 300px);
   height: 100vh;
   background-color: #ffffff;
+  a{
+    color: #38aef0;
+    text-decoration: none;
+  }
   &__header{
     height: 100px;
     padding: 0 40px;
@@ -144,7 +156,7 @@
         .form__submit{
         width: 100px;
         height: 50px;
-        font-size: 20px;
+        font-size: medium;
         padding: 0 30px;
         margin-left: 20px;
         background-color: #38aef0;
