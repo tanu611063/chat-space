@@ -4,14 +4,14 @@
       .main__chat__header__block__groupname
         = @group.name
       .main__chat__header__block__member
+        member :
         - @group.users.each do |user| 
           = user.name
     .main__chat__header__edit
       = link_to "edit", edit_group_path(@group), class: "main__chat__header__edit__btn " 
   .main__chat__messages
     .main__chat__messages__message
-      .main__chat__messages__message__text
-        = render @messages
+      = render @messages
 
   .main__chat__form
     .main__chat__form__message

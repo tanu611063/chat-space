@@ -110,20 +110,22 @@
     overflow: scroll;
     &__message{
       padding-bottom: 40px;
-      &__info{
+      display: flex;
+      margin-bottom: 10px;
+      .upper-message{
         display: flex;
-        margin-bottom: 10px;
-        &__name{
+        &__user-name{
           font-size: 16px;
-          color: #333333;
+          color: #434a54;
+          font-weight: bold;
         }
         &__date{
-          font-size: 12px;
-          color: #999999;
-          margin-left: 10px;
+            font-size: 12px;
+            color: #999999;
+            margin-left: 10px;
+          }
         }
-      }
-      &__text{
+      p{
         color: #434A54;
         font-size: 14px;
       }
@@ -140,6 +142,7 @@
         .form__message{
           height: 50px;
           width: 100%;
+          padding: 0 40px 0 10px;
         }
         .form__mask__image{
           position: relative;
