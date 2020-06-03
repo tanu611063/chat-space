@@ -110,7 +110,6 @@
     overflow: scroll;
     &__message{
       padding-bottom: 40px;
-      display: flex;
       margin-bottom: 10px;
       .upper-message{
         display: flex;
@@ -125,7 +124,7 @@
             margin-left: 10px;
           }
         }
-      p{
+        .lower-message{
         color: #434A54;
         font-size: 14px;
       }

@@ -53,7 +53,7 @@ $('#new_message').on('submit', function(e){
  })
   .done(function(data){
     var html = buildHTML(data);
-    $('.main__chat__messages__message__text').append(html);
+    $('.main__chat__messages__message').append(html);
        $('form')[0].reset();
        $('.main__chat__messages').animate({ scrollTop: $('.main__chat__messages')[0].scrollHeight});
        $(".form__submit").prop("disabled", false);
