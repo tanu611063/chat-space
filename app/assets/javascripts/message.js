@@ -60,6 +60,7 @@ $('#new_message').on('submit', function(e){
       })
       .fail(function() {
         alert("メッセージ送信に失敗しました");
+        $(".form__submit").prop("disabled", false);
     });
   })
   var reloadMessages = function() {
@@ -76,12 +77,14 @@ $('#new_message').on('submit', function(e){
         $.each(messages, function(i, message) {
           insertHTML += buildHTML(message)
         });
-        $('.main__chat__messages__message__text').append(insertHTML);
+        $('.main__chat__messages__message').append(insertHTML);
         $('.main__chat__messages').animate({ scrollTop: $('.main__chat__messages')[0].scrollHeight});
+        $(".form__submit").prop("disabled", false);
       }
     })
     .fail(function() {
       alert('error');
+      $(".form__submit").prop("disabled", false);
     });
    
   };
